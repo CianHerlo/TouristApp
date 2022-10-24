@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Tour de Paris</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello tourist</string>
+    <string name="hello_blank_fragment">Blank Fragment</string>
     <string name="image_placeholder_F3">Image of Food/Drink Place</string>
     <string name="image_placeholder_F2">Image of Things To-Do</string>
+    <string name="home">Home</string>
+    <string name="activities">Activities</string>
+    <string name="refreshments">Refreshments</string>
 </resources>

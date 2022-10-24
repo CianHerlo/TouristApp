@@ -6,7 +6,7 @@ public class Model {
     private int card_image; // course_image;
 
     // Constructor
-    public Model(String card_title, int course_image) {
+    public Model(String card_title, int card_image) {
         this.card_title = card_title;
         this.card_image = card_image;
     }

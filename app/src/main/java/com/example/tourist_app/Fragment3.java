@@ -23,17 +23,17 @@ public class Fragment3 extends Fragment {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_3, container, false);
 
-        RecyclerView rvFoodDrink = (RecyclerView) view.findViewById(R.id.recyclerViewToDo);
+        RecyclerView rvFoodDrink = (RecyclerView) view.findViewById(R.id.recyclerViewFoodDrink);
 
         ArrayList<Model> modelArrayList = new ArrayList<>();
-        modelArrayList.add(new Model("The Green Goose", R.drawable.ic_launcher_background));
-        modelArrayList.add(new Model("Pub O'Prince", R.drawable.ic_launcher_foreground));
-        modelArrayList.add(new Model("Frog Hop House", R.drawable.ic_launcher_foreground));
-        modelArrayList.add(new Model("Lizard Lounge", R.drawable.ic_launcher_foreground));
-        modelArrayList.add(new Model("Le Biscornu", R.drawable.ic_launcher_foreground));
-        modelArrayList.add(new Model("The Counter Rugby Bar", R.drawable.ic_launcher_foreground));
-        modelArrayList.add(new Model("Sir Winston", R.drawable.ic_launcher_foreground));
-        modelArrayList.add(new Model("The Cross of Saint George", R.drawable.ic_launcher_foreground));
+        modelArrayList.add(new Model("The Green Goose", R.drawable.green_goose));
+        modelArrayList.add(new Model("Pub O'Prince", R.drawable.pub_o_prince));
+        modelArrayList.add(new Model("Frog Hop House", R.drawable.frog_hop_house));
+        modelArrayList.add(new Model("Lizard Lounge", R.drawable.lizard_lounge));
+        modelArrayList.add(new Model("Boutary", R.drawable.boutary));
+        modelArrayList.add(new Model("Epicure", R.drawable.epicure));
+        modelArrayList.add(new Model("La Table de Colette", R.drawable.la_table_de_colette));
+        modelArrayList.add(new Model("Mumi", R.drawable.mumi));
 
         // we are initializing our adapter class and passing our arraylist to it.
         MyAdapter MyAdapter = new MyAdapter(this, modelArrayList);

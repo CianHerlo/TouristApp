@@ -2,8 +2,8 @@ package com.example.tourist_app;
 
 public class Model {
 
-    private String card_title; //course_name
-    private int card_image; // course_image;
+    private String card_title;
+    private int card_image;
 
     // Constructor
     public Model(String card_title, int card_image) {

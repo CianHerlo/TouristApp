@@ -35,6 +35,10 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
         holder.cardTitleActivity.setText(model.getActivity_title());
         holder.cardDescActivity.setText(model.getActivity_desc());
         holder.cardImageActivity.setImageResource(model.getActivity_image());
+
+        holder.itemView.setOnClickListener(view -> {
+            //Should Re-Direct User to Website about Activity
+        });
     }
 
     @Override

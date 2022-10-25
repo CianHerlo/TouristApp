@@ -1,5 +1,7 @@
 package com.example.tourist_app;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tourist_app.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Fragment1 extends Fragment {
     View view;
@@ -21,6 +24,16 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_1, container, false);
+
+
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(
+                    Intent.ACTION_SENDTO,
+                    Uri.parse("mailto:cian.herlihy@mycit.ie")
+            );
+            startActivity(intent);
+        });
         return view;
     }
 }

@@ -7,4 +7,12 @@
     <string name="home">Home</string>
     <string name="activities">Activities</string>
     <string name="refreshments">Refreshments</string>
+    <string name="home_title">Touring Paris</string>
+    <string name="textView2">Come Tour Paris!</string>
+    <string name="home_col_left">There are so many tours available in paris that you pack in to your holiday. Plan your trip ahead and take a look at some of our suggestions! This is a very small mobile application so content may be small but the features are what is important.</string>
+    <string name="home_col_right">While checking us out. You can view a shortlist of the popular places to tour in Paris including the Eiffel Tower! We also provide a few places to enjoy a drink or a bite to eat. Go ahead and check out the tabs. Tabs should be located at the bottom of the app.</string>
+    <!--
+    <string name=""></string>
+    -->
+
 </resources>

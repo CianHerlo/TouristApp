@@ -18,6 +18,25 @@
             android:id="@+id/recyclerViewActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp" >
+
+        </androidx.recyclerview.widget.RecyclerView>
     </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/fab2"
+            android:clickable="true"
+            android:src="@drawable/ic_arrow_up" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

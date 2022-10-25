@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tourist_app.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,9 @@ public class Fragment2 extends Fragment {
         // in below two lines we are setting layout manager and adapter to our recycler view.
         rvActivity.setLayoutManager(layoutManager);
         rvActivity.setAdapter(ActivityAdapter);
+
+        FloatingActionButton fab2 = view.findViewById(R.id.fab2);
+        fab2.setOnClickListener(view -> rvActivity.scrollToPosition(0));
         return view;
     }
 }

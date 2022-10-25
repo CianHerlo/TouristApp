@@ -1,5 +1,7 @@
 package com.example.tourist_app;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 public class Fragment3 extends Fragment {
@@ -45,6 +50,9 @@ public class Fragment3 extends Fragment {
         // in below two lines we are setting layout manager and adapter to our recycler view.
         rvFoodDrink.setLayoutManager(layoutManager);
         rvFoodDrink.setAdapter(MyAdapter);
+
+        FloatingActionButton fab3 = view.findViewById(R.id.fab3);
+        fab3.setOnClickListener(view -> rvFoodDrink.scrollToPosition(0));
 
 
         return view;

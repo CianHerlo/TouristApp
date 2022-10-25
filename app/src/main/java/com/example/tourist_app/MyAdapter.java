@@ -44,15 +44,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.cardTitle.setText(model.getCard_title());
         holder.cardImage.setImageResource(model.getCard_image());
 
+        /* TODO Fix the Intents to Re-Direct User to a Google Search of that Restaurant or Pub. Google Maps testing is for Fragment 2 of Landmarks */
         holder.itemView.setOnClickListener(view -> {
             //Should Re-Direct User to Website of Restaurant/Pub
             //Toast.makeText(view.getContext(), ""+model.getCard_title() , Toast.LENGTH_SHORT).show();
 
             Snackbar snackbar = Snackbar.make(view, ""+model.getCard_title(), 5000);
-            snackbar.setAction("Search", view1 -> {
-                Intent viewSearch = new Intent(Intent.ACTION_VIEW);
-                viewSearch.putExtra(SearchManager.QUERY, model.getCard_title());
-                startActivity(viewSearch);
+//            snackbar.setAction("Search", view1 -> {
+//                Intent viewSearch = new Intent(Intent.ACTION_WEB_SEARCH);
+//                viewSearch.putExtra(SearchManager.QUERY, model.getCard_title());
+//                startActivity(viewSearch);
+//
+//                // Create a Uri from an intent string. Use the result to create an Intent.
+//                Uri gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988");
+//
+//                // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+//                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+//                // Make the Intent explicit by setting the Google Maps package
+//                mapIntent.setPackage("com.google.android.apps.maps");
+//
+//                // Attempt to start an activity that can handle the Intent
+//                startActivity(mapIntent);
+//            });
+            snackbar.setAction("Close", view1 -> {
+                snackbar.dismiss();
             });
             snackbar.show();
 

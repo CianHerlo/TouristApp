@@ -29,15 +29,26 @@ public class Fragment2 extends Fragment {
         view = inflater.inflate(R.layout.fragment_2, container, false);
         RecyclerView rvActivity = (RecyclerView) view.findViewById(R.id.recyclerViewActivity);
 
+        String eiffelTxt = "Standing at 324m tall. The Eiffel Tower is the most famous symbol for Paris and has been around since 1889. This makes this amazing tower a must see from the top to overlook the beauty of Paris.";
+        String louvreTxt = "The worlds largest museum and houses the most impressive collection of art across the globe. This also features the most famous painting of all, the Mona Lisa. Come visit and see the history as you walk through time and take home memories with you.";
+        String arcTxt = "The Arc de Triomphe honours who fought and died in the French Revolution and the Napolopnic Wars. This arch is also seen as the center of Paris making it a hard miss.";
+        String museeTxt = "Internationally renowned for its rich collection of impressionist art. displays all western artistic creation from 1848 to 1914 which can range from paintings to architecture. This place does not fail to impress!";
+        String notreTxt = "Dedicated to the Virgin Mary, Notre-Dame de Paris is one of the oldest Gothic Cathedrals in the world and one of the best-known. It towers offer incredible views over Paris. Built between 1163 and 1245 on the Île de la Cité, Notre Dame de Paris is one of the oldest gothic cathedrals in the world.";
+        String luxTxt = "Located in the heart of the Left Bank, Luxembourg Gardens is a 60-acre park known for its extraordinary public amenities, including fountains, sculpture, ponds, flowerbeds, tennis courts, pony rides, a marionette theatre, playgrounds, food kiosks and open-air cafés.";
+        String sainteTxt = "Let yourself be dazzled by the 1,113 stained glass windows in this gem of Rayonnant Gothic architecture. The Sainte-Chapelle is the finest royal chapel to be built in France and features a truly exceptional collection of stainedglass windows. It was built in the mid 13th century by Louis IX, at the heart of the royal residence, the Palais de la Cité, to house the relics of the Passion of Christ. Adorned with a unique collection of fifteen glass panels and a rose window forming a veritable wall of light, the Sainte-Chapelle gem of Rayonnant Gothic architecture.";
+        String catacTxt = "The Catacombes de Paris are underground ossuaries which hold the remains of more than six million people in a small part of a tunnel network built to consolidate Paris' ancient stone quarries.";
+        String disneyTxt = "Today Disneyland Paris is a multi-day resort offering two world-class theme parks, seven themed Disney hotels and Villages Nature Paris, a 27-hole golf course, the Disney Village® entertainment complex, and Europe's largest integrated corporate events venue.";
+
         ArrayList<ActivityModel> activityArrayList = new ArrayList<>();
-        activityArrayList.add(new ActivityModel("The Green Goose", "", R.drawable.green_goose));
-        activityArrayList.add(new ActivityModel("Pub O'Prince", "", R.drawable.pub_o_prince));
-        activityArrayList.add(new ActivityModel("Frog Hop House", "", R.drawable.frog_hop_house));
-        activityArrayList.add(new ActivityModel("Lizard Lounge", "", R.drawable.lizard_lounge));
-        activityArrayList.add(new ActivityModel("Boutary", "", R.drawable.boutary));
-        activityArrayList.add(new ActivityModel("Epicure", "", R.drawable.epicure));
-        activityArrayList.add(new ActivityModel("La Table de Colette", "", R.drawable.la_table_de_colette));
-        activityArrayList.add(new ActivityModel("Mumi", "", R.drawable.mumi));
+        activityArrayList.add(new ActivityModel("Eiffel Tower", eiffelTxt, R.drawable.eiffel_tower));
+        activityArrayList.add(new ActivityModel("Louvre Museum", louvreTxt, R.drawable.louvre));
+        activityArrayList.add(new ActivityModel("Arc de Triumphe", arcTxt, R.drawable.arc_de_triumphe));
+        activityArrayList.add(new ActivityModel("Musée d'Orsay", museeTxt, R.drawable.musee_dorsay));
+        activityArrayList.add(new ActivityModel("Notre-Dame", notreTxt, R.drawable.notre_dame));
+        activityArrayList.add(new ActivityModel("Luxembourg Gardens", luxTxt, R.drawable.luxembourg_gardens));
+        activityArrayList.add(new ActivityModel("Sainte Chapelle", sainteTxt, R.drawable.sainte_chapelle));
+        activityArrayList.add(new ActivityModel("Catacombs de Paris", catacTxt, R.drawable.catacombs));
+        activityArrayList.add(new ActivityModel("Disneyland Paris", disneyTxt, R.drawable.disneyland));
 
         // we are initializing our adapter class and passing our arraylist to it.
         ActivityAdapter ActivityAdapter = new ActivityAdapter(this, activityArrayList);

@@ -46,49 +46,34 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         holder.itemView.setOnClickListener(view -> {
             //Should Re-Direct User to Website of Restaurant/Pub
-            Toast.makeText(view.getContext(), "Card No.: "+holder.getAdapterPosition() , Toast.LENGTH_SHORT).show();
+            //Toast.makeText(view.getContext(), ""+model.getCard_title() , Toast.LENGTH_SHORT).show();
 
+            Snackbar snackbar = Snackbar.make(view, ""+model.getCard_title(), 5000);
+            snackbar.setAction("Search", view1 -> {
+                Intent viewSearch = new Intent(Intent.ACTION_VIEW);
+                viewSearch.putExtra(SearchManager.QUERY, model.getCard_title());
+                startActivity(viewSearch);
+            });
+            snackbar.show();
 
-//                switch (position) {
+//            Intent intent;
+//                switch (holder.getAdapterPosition()) {
 //                    case 0:
-//                        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent.putExtra(SearchManager.QUERY, "https://www.google.ie/");
+//                        intent = new Intent(Intent.ACTION_SEARCH, Uri.parse("https://www.google.ie"));
 //                        startActivity(intent);
 //                        break;
 //                    case 1:
 //                        Intent intent1 = new Intent(Intent.ACTION_WEB_SEARCH);
 //                        intent1.putExtra(SearchManager.QUERY, "https://www.google.ie/1");
 //                        startActivity(intent1);
+//
+//                        intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.ie"));
+//                        startActivity(intent);
 //                        break;
 //                    case 2:
-//                        Intent intent2 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent2.putExtra(SearchManager.QUERY, "https://www.google.ie/2");
-//                        startActivity(intent2);
-//                        break;
-//                    case 3:
-//                        Intent intent3 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent3.putExtra(SearchManager.QUERY, "https://www.google.ie/3");
-//                        startActivity(intent3);
-//                        break;
-//                    case 4:
-//                        Intent intent4 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent4.putExtra(SearchManager.QUERY, "https://www.google.ie/4");
-//                        startActivity(intent4);
-//                        break;
-//                    case 5:
-//                        Intent intent5 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent5.putExtra(SearchManager.QUERY, "https://www.google.ie/5");
-//                        startActivity(intent5);
-//                        break;
-//                    case 6:
-//                        Intent intent6 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent6.putExtra(SearchManager.QUERY, "https://www.google.ie/6");
-//                        startActivity(intent6);
-//                        break;
-//                    case 7:
-//                        Intent intent7 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent7.putExtra(SearchManager.QUERY, "https://www.google.ie/7");
-//                        startActivity(intent7);
+//                        intent = new Intent(Intent.ACTION_WEB_SEARCH);
+//                        intent.putExtra(SearchManager.QUERY, "https://www.google.ie/2");
+//                        startActivity(intent);
 //                        break;
 //                }
         });

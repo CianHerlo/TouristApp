@@ -30,15 +30,24 @@ public class Fragment3 extends Fragment {
 
         RecyclerView rvFoodDrink = (RecyclerView) view.findViewById(R.id.recyclerViewFoodDrink);
 
+        String greenTxt = "The Green Goose is a Woodsy Irish pub offering homemade comfort food, brunches & craft beers, plus cocktails.";
+        String princeTxt = "The Pub O' Prince is a small pub located very close to the Luxembourg Gardens. This pub offers a small but tasty menu too with plenty of drink to be had.";
+        String frogTxt = "The Frog Hop House is situated between the glamorous shopping of the Vendome and the bustling warren of streets that fringe the world famous Paris Opera. Frog Hop House specialises in a constantly changing range of artisan craft FrogBeer, genuinely good burgers and American BBQ & soul food.";
+        String lizardTxt = "The Lizard Lounge was opened in 1994 by John Coyle, Oliver Jenkins and Phil Morgan. Our concept for the Lizard Lounge is the same then as it is now. Well-made drinks accompanied by delicious bar food and above all a great service from our barstaff. We take great pride in what we do and the service we provide. Come by and see us and let us look after you!";
+        String boutaryTxt = "Boutary is the gourmet restaurant of the caviar house of the same name. Like the House's flagship product, it combines refinement and relaxed conviviality for a moment of pleasure to share.";
+        String epicureTxt = "A goldsmith of gastronomy Our 3-star chef, Eric Frechon, has resolutely made Epicure the bastion par excellence of French gastronomy. Some come to Paris just to taste his cuisine: his stuffed macaroni, black truffle, artichoke and duck foie gras reflect all the genius and passion of one of the greatest. The Epicure restaurant can be enjoyed every day of the year, with its own terrace in the exquisite garden throughout the summer. Epicure has won for the third consecutive year the \"Grand Award\", the supreme award given by the American magazine Wine Spectator, for its exceptional wine cellar.";
+        String coletteTxt = "Located in the prestigious district of the Panthéon and the Sorbonne, steeped in history, culture and French romanticism, La Table de Colette opened its doors at the end of October 2019. Nestled in the charming little rue Laplace, one of these so authentic and silent alleys in the heart of the capital, the opening of the garden terrace on Monday evening June 22, an idyllic setting bathed in vegetation, calm and well-being, promises to be the event of this summer !";
+        String mumiTxt = "The MUMI restaurant offers signature cuisine with international touches, fresh and seasonal products with daily arrivals.  The place is very chic, cozy and comfortable with work on the acoustics.  Warm and professional welcome.";
+
         ArrayList<Model> modelArrayList = new ArrayList<>();
-        modelArrayList.add(new Model("The Green Goose", R.drawable.green_goose));
-        modelArrayList.add(new Model("Pub O'Prince", R.drawable.pub_o_prince));
-        modelArrayList.add(new Model("Frog Hop House", R.drawable.frog_hop_house));
-        modelArrayList.add(new Model("Lizard Lounge", R.drawable.lizard_lounge));
-        modelArrayList.add(new Model("Boutary", R.drawable.boutary));
-        modelArrayList.add(new Model("Epicure", R.drawable.epicure));
-        modelArrayList.add(new Model("La Table de Colette", R.drawable.la_table_de_colette));
-        modelArrayList.add(new Model("Mumi", R.drawable.mumi));
+        modelArrayList.add(new Model("The Green Goose", R.drawable.green_goose, greenTxt));
+        modelArrayList.add(new Model("Pub O'Prince", R.drawable.pub_o_prince, princeTxt));
+        modelArrayList.add(new Model("Frog Hop House", R.drawable.frog_hop_house, frogTxt));
+        modelArrayList.add(new Model("Lizard Lounge", R.drawable.lizard_lounge, lizardTxt));
+        modelArrayList.add(new Model("Boutary", R.drawable.boutary, boutaryTxt));
+        modelArrayList.add(new Model("Epicure", R.drawable.epicure, epicureTxt));
+        modelArrayList.add(new Model("La Table de Colette", R.drawable.la_table_de_colette, coletteTxt));
+        modelArrayList.add(new Model("Mumi", R.drawable.mumi, mumiTxt));
 
         // we are initializing our adapter class and passing our arraylist to it.
         MyAdapter MyAdapter = new MyAdapter(this, modelArrayList);

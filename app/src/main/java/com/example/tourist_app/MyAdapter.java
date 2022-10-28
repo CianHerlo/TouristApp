@@ -3,6 +3,7 @@ package com.example.tourist_app;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -49,7 +53,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             //Should Re-Direct User to Website of Restaurant/Pub
             //Toast.makeText(view.getContext(), ""+model.getCard_title() , Toast.LENGTH_SHORT).show();
 
-            Snackbar snackbar = Snackbar.make(view, ""+model.getCard_title(), 5000);
+            //itemClick(view, model, position);
+//            Bundle bundle = new Bundle();
+//            bundle.putString("Title", model.getCard_title());
+//            bundle.putString("Description", model.getCard_desc());
+//            bundle.putInt("Image", model.getCard_image());
+
+//            AppCompatActivity activity = (AppCompatActivity) view.getContext();
+//            RefreshmentsFrag refreshmentsFrag = new RefreshmentsFrag();
+//            refreshmentsFrag.setArguments(bundle);
+//            activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, refreshmentsFrag).commit();
+
+            //Snackbar snackbar = Snackbar.make(view, ""+model.getCard_title(), 5000);
 //            snackbar.setAction("Search", view1 -> {
 //                Intent viewSearch = new Intent(Intent.ACTION_WEB_SEARCH);
 //                viewSearch.putExtra(SearchManager.QUERY, model.getCard_title());
@@ -66,10 +81,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //                // Attempt to start an activity that can handle the Intent
 //                startActivity(mapIntent);
 //            });
-            snackbar.setAction("Close", view1 -> {
-                snackbar.dismiss();
-            });
-            snackbar.show();
+            //snackbar.setAction("Close", view1 -> {
+                //snackbar.dismiss();
+            //});
+            //snackbar.show();
 
 //            Intent intent;
 //                switch (holder.getAdapterPosition()) {
@@ -91,10 +106,35 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //                        startActivity(intent);
 //                        break;
 //                }
+
+            Intent intent = new Intent(context.getContext(), GGDetails.class);
+            intent.putExtra("Title", model.getCard_title());
+            intent.putExtra("Desc", model.getCard_desc());
+            intent.putExtra("Image", model.getCard_image());
+            context.startActivity(intent);
         });
     }
 
     private void startActivity(Intent viewIntent) {
+    }
+
+    public void itemClick(View view, Model model, int position) {
+        AppCompatActivity activity = (AppCompatActivity) view.getContext();
+        RefreshmentsFrag refreshmentsFrag = new RefreshmentsFrag();
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, refreshmentsFrag).commit();
+
+        TextView titleTxt = (TextView) activity.findViewById(R.id.refreshmentTitleFrag);
+        titleTxt.setText(model.getCard_title());
+
+//        Uri webpage = Uri.parse("https://www.android.com");
+//        Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+//        startActivity(webIntent);
+
+//        Snackbar snackbar = Snackbar.make(holder.itemView, ""+model.getCard_title(), 5000);
+//        snackbar.setAction("Close", view1 -> {
+//            snackbar.dismiss();
+//        });
+//        snackbar.show();
     }
 
     @Override

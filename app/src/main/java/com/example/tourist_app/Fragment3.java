@@ -39,15 +39,24 @@ public class Fragment3 extends Fragment {
         String coletteTxt = "Located in the prestigious district of the Panthéon and the Sorbonne, steeped in history, culture and French romanticism, La Table de Colette opened its doors at the end of October 2019. Nestled in the charming little rue Laplace, one of these so authentic and silent alleys in the heart of the capital, the opening of the garden terrace on Monday evening June 22, an idyllic setting bathed in vegetation, calm and well-being, promises to be the event of this summer !";
         String mumiTxt = "The MUMI restaurant offers signature cuisine with international touches, fresh and seasonal products with daily arrivals.  The place is very chic, cozy and comfortable with work on the acoustics.  Warm and professional welcome.";
 
+        String greenLink = "https://www.thegreengoose.fr/";
+        String princeLink = "https://puboprinceparis.com/";
+        String frogLink = "https://www.frogpubs.com/pub-frog-hop-house-paris-9.php";
+        String lizardLink = "https://www.timeout.com/paris/en/bars-and-pubs/lizard-lounge";
+        String boutaryLink = "https://www.boutary-restaurant.com/";
+        String epicureLink = "https://www.oetkercollection.com/hotels/le-bristol-paris/restaurants-bar/epicure/";
+        String coletteLink = "https://www.latabledecolette.fr/";
+        String mumiLink = "https://www.restaurantmumi.com/";
+
         ArrayList<Model> modelArrayList = new ArrayList<>();
-        modelArrayList.add(new Model("The Green Goose", R.drawable.green_goose, greenTxt));
-        modelArrayList.add(new Model("Pub O'Prince", R.drawable.pub_o_prince, princeTxt));
-        modelArrayList.add(new Model("Frog Hop House", R.drawable.frog_hop_house, frogTxt));
-        modelArrayList.add(new Model("Lizard Lounge", R.drawable.lizard_lounge, lizardTxt));
-        modelArrayList.add(new Model("Boutary", R.drawable.boutary, boutaryTxt));
-        modelArrayList.add(new Model("Epicure", R.drawable.epicure, epicureTxt));
-        modelArrayList.add(new Model("La Table de Colette", R.drawable.la_table_de_colette, coletteTxt));
-        modelArrayList.add(new Model("Mumi", R.drawable.mumi, mumiTxt));
+        modelArrayList.add(new Model("The Green Goose", R.drawable.green_goose, greenTxt, greenLink));
+        modelArrayList.add(new Model("Pub O'Prince", R.drawable.pub_o_prince, princeTxt, princeLink));
+        modelArrayList.add(new Model("Frog Hop House", R.drawable.frog_hop_house, frogTxt, frogLink));
+        modelArrayList.add(new Model("Lizard Lounge", R.drawable.lizard_lounge, lizardTxt, lizardLink));
+        modelArrayList.add(new Model("Boutary", R.drawable.boutary, boutaryTxt, boutaryLink));
+        modelArrayList.add(new Model("Epicure", R.drawable.epicure, epicureTxt, epicureLink));
+        modelArrayList.add(new Model("La Table de Colette", R.drawable.la_table_de_colette, coletteTxt, coletteLink));
+        modelArrayList.add(new Model("Mumi", R.drawable.mumi, mumiTxt, mumiLink));
 
         // we are initializing our adapter class and passing our arraylist to it.
         MyAdapter MyAdapter = new MyAdapter(this, modelArrayList);

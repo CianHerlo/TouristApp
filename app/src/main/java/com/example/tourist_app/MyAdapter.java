@@ -111,6 +111,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             intent.putExtra("Title", model.getCard_title());
             intent.putExtra("Desc", model.getCard_desc());
             intent.putExtra("Image", model.getCard_image());
+            intent.putExtra("Link", model.getCard_link());
             context.startActivity(intent);
         });
     }

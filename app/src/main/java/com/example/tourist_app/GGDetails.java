@@ -30,4 +30,10 @@ public class GGDetails extends AppCompatActivity {
         titleTxt.setText(title);
         descTxt.setText(desc);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

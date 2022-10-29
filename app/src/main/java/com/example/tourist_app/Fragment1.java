@@ -10,18 +10,20 @@ import android.view.ViewGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Fragment1 extends Fragment {
+    // Declare View
     View view;
+
     public Fragment1() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_1, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_1, container, false); // Inflate the Layout of Fragment 1
 
 
+        // Floating Action Button Opens Default Email App to send email to my MTU email for support
         FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(
@@ -30,6 +32,7 @@ public class Fragment1 extends Fragment {
             );
             startActivity(intent);
         });
+
         return view;
     }
 }

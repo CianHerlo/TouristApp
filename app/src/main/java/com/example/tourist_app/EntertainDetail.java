@@ -38,12 +38,12 @@ public class EntertainDetail extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() {                   // Pressing Back Button on Phone will return to Main Activity Home Page
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void searchBTNPressed(String link) {
+    public void searchBTNPressed(String link) {     // Opens up Site for relevant Activity (Landmark)
         Intent intent1 = new Intent(Intent.ACTION_WEB_SEARCH);
         intent1.putExtra(SearchManager.QUERY, link);
         startActivity(intent1);

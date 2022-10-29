@@ -7,7 +7,7 @@ public class ActivityModel {
     private int activity_image;
     private String activity_link;
 
-    // Constructor
+
     public ActivityModel(String activity_title, String activity_desc, int activity_image, String activity_link) {
         this.activity_title = activity_title;
         this.activity_desc = activity_desc;
@@ -15,7 +15,7 @@ public class ActivityModel {
         this.activity_link = activity_link;
     }
 
-    // Getter and Setter
+
     public String getActivity_title() {
         return activity_title;
     }

@@ -19,12 +19,12 @@ public class Fragment2 extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_2, container, false);
-        RecyclerView rvActivity = (RecyclerView) view.findViewById(R.id.recyclerViewActivity);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        view = inflater.inflate(R.layout.fragment_2, container, false);                  // Inflate Layout of Fragment 2
+        RecyclerView rvActivity = (RecyclerView) view.findViewById(R.id.recyclerViewActivity);      // Initialise RecyclerView for Interface
+
+        // Descriptions to insert into ArrayList
         String eiffelTxt = "Standing at 324m tall. The Eiffel Tower is the most famous symbol for Paris and has been around since 1889. This makes this amazing tower a must see from the top to overlook the beauty of Paris.";
         String louvreTxt = "The worlds largest museum and houses the most impressive collection of art across the globe. This also features the most famous painting of all, the Mona Lisa. Come visit and see the history as you walk through time and take home memories with you.";
         String arcTxt = "The Arc de Triomphe honours who fought and died in the French Revolution and the Napolopnic Wars. This arch is also seen as the center of Paris making it a hard miss.";
@@ -35,6 +35,7 @@ public class Fragment2 extends Fragment {
         String catacTxt = "The Catacombes de Paris are underground ossuaries which hold the remains of more than six million people in a small part of a tunnel network built to consolidate Paris' ancient stone quarries.";
         String disneyTxt = "Today Disneyland Paris is a multi-day resort offering two world-class theme parks, seven themed Disney hotels and Villages Nature Paris, a 27-hole golf course, the Disney Village® entertainment complex, and Europe's largest integrated corporate events venue.";
 
+        // Links to insert into ArrayList to redirect User in Web Search Later
         String eiffelLink = "https://www.toureiffel.paris/en";
         String louvreLink = "https://www.louvre.fr/en";
         String arcLink = "https://www.paris-arc-de-triomphe.fr/en/";
@@ -45,6 +46,7 @@ public class Fragment2 extends Fragment {
         String catacLink = "https://www.catacombes.paris.fr/en";
         String disneyLink = "https://www.disneylandparis.com/en-ie/";
 
+        // Hard Coded Objects added to ArrayList for Landmark Activities
         ArrayList<ActivityModel> activityArrayList = new ArrayList<>();
         activityArrayList.add(new ActivityModel("Eiffel Tower", eiffelTxt, R.drawable.eiffel_tower, eiffelLink));
         activityArrayList.add(new ActivityModel("Louvre Museum", louvreTxt, R.drawable.louvre, louvreLink));
@@ -56,17 +58,15 @@ public class Fragment2 extends Fragment {
         activityArrayList.add(new ActivityModel("Catacombs de Paris", catacTxt, R.drawable.catacombs, catacLink));
         activityArrayList.add(new ActivityModel("Disneyland Paris", disneyTxt, R.drawable.disneyland, disneyLink));
 
-        // we are initializing our adapter class and passing our arraylist to it.
-        ActivityAdapter ActivityAdapter = new ActivityAdapter(this, activityArrayList);
 
-        // below line is for setting a layout manager for our recycler view.
-        // here we are creating vertical list so we will provide orientation as vertical
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        ActivityAdapter ActivityAdapter = new ActivityAdapter(this, activityArrayList);  // Initialise Adapter with Arraylist Passed as Argument
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());       // Layout Manager handles Layout of RecyclerView to later insert Cards
 
-        // in below two lines we are setting layout manager and adapter to our recycler view.
+        // Set Layout Manager and Adapter to RecyclerView on Fragment 2
         rvActivity.setLayoutManager(layoutManager);
         rvActivity.setAdapter(ActivityAdapter);
 
+        // Floating Action Button Brings User back to Top of Page on Click
         FloatingActionButton fab2 = view.findViewById(R.id.fab2);
         fab2.setOnClickListener(view -> rvActivity.scrollToPosition(0));
         return view;

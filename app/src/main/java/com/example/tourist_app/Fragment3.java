@@ -11,8 +11,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class Fragment3 extends Fragment {
-    View view;
 
+    View view;
 
     public Fragment3() {
         // Required empty public constructor
@@ -20,11 +20,12 @@ public class Fragment3 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_3, container, false);
 
-        RecyclerView rvFoodDrink = (RecyclerView) view.findViewById(R.id.recyclerViewFoodDrink);
+        view =  inflater.inflate(R.layout.fragment_3, container, false);                 // Inflates Fragment 3 into Main
 
+        RecyclerView rvFoodDrink = (RecyclerView) view.findViewById(R.id.recyclerViewFoodDrink);    // Initialise RecyclerView for Fragment 3
+
+        // Description Text for Details Page Later
         String greenTxt = "The Green Goose is a Woodsy Irish pub offering homemade comfort food, brunches & craft beers, plus cocktails.";
         String princeTxt = "The Pub O' Prince is a small pub located very close to the Luxembourg Gardens. This pub offers a small but tasty menu too with plenty of drink to be had.";
         String frogTxt = "The Frog Hop House is situated between the glamorous shopping of the Vendome and the bustling warren of streets that fringe the world famous Paris Opera. Frog Hop House specialises in a constantly changing range of artisan craft FrogBeer, genuinely good burgers and American BBQ & soul food.";
@@ -34,6 +35,7 @@ public class Fragment3 extends Fragment {
         String coletteTxt = "Located in the prestigious district of the Panthéon and the Sorbonne, steeped in history, culture and French romanticism, La Table de Colette opened its doors at the end of October 2019. Nestled in the charming little rue Laplace, one of these so authentic and silent alleys in the heart of the capital, the opening of the garden terrace on Monday evening June 22, an idyllic setting bathed in vegetation, calm and well-being, promises to be the event of this summer !";
         String mumiTxt = "The MUMI restaurant offers signature cuisine with international touches, fresh and seasonal products with daily arrivals.  The place is very chic, cozy and comfortable with work on the acoustics.  Warm and professional welcome.";
 
+        // Links to Websites for Web Search Later in Details Page
         String greenLink = "https://www.thegreengoose.fr/";
         String princeLink = "https://puboprinceparis.com/";
         String frogLink = "https://www.frogpubs.com/pub-frog-hop-house-paris-9.php";
@@ -43,6 +45,7 @@ public class Fragment3 extends Fragment {
         String coletteLink = "https://www.latabledecolette.fr/";
         String mumiLink = "https://www.restaurantmumi.com/";
 
+        // Add Hard Coded Objects for Cards Info in RecyclerView
         ArrayList<Model> modelArrayList = new ArrayList<>();
         modelArrayList.add(new Model("The Green Goose", R.drawable.green_goose, greenTxt, greenLink));
         modelArrayList.add(new Model("Pub O'Prince", R.drawable.pub_o_prince, princeTxt, princeLink));
@@ -53,17 +56,17 @@ public class Fragment3 extends Fragment {
         modelArrayList.add(new Model("La Table de Colette", R.drawable.la_table_de_colette, coletteTxt, coletteLink));
         modelArrayList.add(new Model("Mumi", R.drawable.mumi, mumiTxt, mumiLink));
 
-        // we are initializing our adapter class and passing our arraylist to it.
-        MyAdapter MyAdapter = new MyAdapter(this, modelArrayList);
 
-        // below line is for setting a layout manager for our recycler view.
-        // here we are creating vertical list so we will provide orientation as vertical
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        MyAdapter MyAdapter = new MyAdapter(this, modelArrayList);                       // Initialise Adapter with ArrayList passed as Argument
 
-        // in below two lines we are setting layout manager and adapter to our recycler view.
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());       // Layout Manager handles layout of Fragment 3
+
+        // Setting Adapter and Layout Manager for RecyclerView on Fragment 3
         rvFoodDrink.setLayoutManager(layoutManager);
         rvFoodDrink.setAdapter(MyAdapter);
 
+        // Floating Action Button to send User back to Top of Page on Button Click
         FloatingActionButton fab3 = view.findViewById(R.id.fab3);
         fab3.setOnClickListener(view -> rvFoodDrink.scrollToPosition(0));
 

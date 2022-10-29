@@ -15,32 +15,32 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private final Fragment3 context;
     private final ArrayList<Model> modelArrayList;
 
-    // Constructor
+
     public MyAdapter(Fragment3 context, ArrayList<Model> modelArrayList) {
         this.context = context;
         this.modelArrayList = modelArrayList;
     }
 
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // to inflate the layout for each item of recycler view.
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {     // Inflates cards into Recycler View
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_cards, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
-        // to set data to textview and imageview of each card layout
+        // Sets Data for Cards from Object in ArrayList depending on Position in ArrayList
         final Model model = modelArrayList.get(position);
         holder.cardTitle.setText(model.getCard_title());
         holder.cardImage.setImageResource(model.getCard_image());
 
-        /* TODO Fix the Intents to Re-Direct User to a Google Search of that Restaurant or Pub. Google Maps testing is for Fragment 2 of Landmarks */
+        // Click Listener for Cards to send User to a details page
         holder.itemView.setOnClickListener(view -> itemClick(model));
     }
 
-    public void itemClick(Model model) {
+    public void itemClick(Model model) {    // Send relevent information over to new activity to be used
         Intent intent = new Intent(context.getContext(), GGDetails.class);
         intent.putExtra("Title", model.getCard_title());
         intent.putExtra("Desc", model.getCard_desc());
@@ -51,11 +51,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        // this method is used for showing number of card items in recycler view
-        return modelArrayList.size();
+        return modelArrayList.size();   // returns ArrayList Length
     }
 
-    // View holder class for initializing of your views such as TextView and Imageview
+    // Initialise Views for CardView on Fragment 3
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final ImageView cardImage;
         private final TextView cardTitle;

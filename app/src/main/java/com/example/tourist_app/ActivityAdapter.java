@@ -1,5 +1,6 @@
 package com.example.tourist_app;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,17 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
 
         holder.itemView.setOnClickListener(view -> {
             //Should Re-Direct User to Website about Activity
+            itemClick(model);
         });
+    }
+
+    public void itemClick(ActivityModel model) {
+        Intent intent = new Intent(context.getContext(), GGDetails.class);
+        intent.putExtra("Title", model.getActivity_title());
+        intent.putExtra("Desc", model.getActivity_desc());
+        intent.putExtra("Image", model.getActivity_image());
+        intent.putExtra("Link", model.getActivity_link());
+        context.startActivity(intent);
     }
 
     @Override

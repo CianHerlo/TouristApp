@@ -40,16 +40,26 @@ public class Fragment2 extends Fragment {
         String catacTxt = "The Catacombes de Paris are underground ossuaries which hold the remains of more than six million people in a small part of a tunnel network built to consolidate Paris' ancient stone quarries.";
         String disneyTxt = "Today Disneyland Paris is a multi-day resort offering two world-class theme parks, seven themed Disney hotels and Villages Nature Paris, a 27-hole golf course, the Disney Village® entertainment complex, and Europe's largest integrated corporate events venue.";
 
+        String eiffelLink = "https://www.toureiffel.paris/en";
+        String louvreLink = "https://www.louvre.fr/en";
+        String arcLink = "https://www.paris-arc-de-triomphe.fr/en/";
+        String museeLink = "https://www.musee-orsay.fr/en";
+        String notreLink = "https://notredamecathedralparis.com/";
+        String luxLink = "https://en.parisinfo.com/paris-museum-monument/71393/Jardin-du-Luxembourg";
+        String sainteLink = "https://www.sainte-chapelle.fr/en/";
+        String catacLink = "https://www.catacombes.paris.fr/en";
+        String disneyLink = "https://www.disneylandparis.com/en-ie/";
+
         ArrayList<ActivityModel> activityArrayList = new ArrayList<>();
-        activityArrayList.add(new ActivityModel("Eiffel Tower", eiffelTxt, R.drawable.eiffel_tower));
-        activityArrayList.add(new ActivityModel("Louvre Museum", louvreTxt, R.drawable.louvre));
-        activityArrayList.add(new ActivityModel("Arc de Triumphe", arcTxt, R.drawable.arc_de_triumphe));
-        activityArrayList.add(new ActivityModel("Musée d'Orsay", museeTxt, R.drawable.musee_dorsay));
-        activityArrayList.add(new ActivityModel("Notre-Dame", notreTxt, R.drawable.notre_dame));
-        activityArrayList.add(new ActivityModel("Luxembourg Gardens", luxTxt, R.drawable.luxembourg_gardens));
-        activityArrayList.add(new ActivityModel("Sainte Chapelle", sainteTxt, R.drawable.sainte_chapelle));
-        activityArrayList.add(new ActivityModel("Catacombs de Paris", catacTxt, R.drawable.catacombs));
-        activityArrayList.add(new ActivityModel("Disneyland Paris", disneyTxt, R.drawable.disneyland));
+        activityArrayList.add(new ActivityModel("Eiffel Tower", eiffelTxt, R.drawable.eiffel_tower, eiffelLink));
+        activityArrayList.add(new ActivityModel("Louvre Museum", louvreTxt, R.drawable.louvre, louvreLink));
+        activityArrayList.add(new ActivityModel("Arc de Triumphe", arcTxt, R.drawable.arc_de_triumphe, arcLink));
+        activityArrayList.add(new ActivityModel("Musée d'Orsay", museeTxt, R.drawable.musee_dorsay, museeLink));
+        activityArrayList.add(new ActivityModel("Notre-Dame", notreTxt, R.drawable.notre_dame, notreLink));
+        activityArrayList.add(new ActivityModel("Luxembourg Gardens", luxTxt, R.drawable.luxembourg_gardens, luxLink));
+        activityArrayList.add(new ActivityModel("Sainte Chapelle", sainteTxt, R.drawable.sainte_chapelle, sainteLink));
+        activityArrayList.add(new ActivityModel("Catacombs de Paris", catacTxt, R.drawable.catacombs, catacLink));
+        activityArrayList.add(new ActivityModel("Disneyland Paris", disneyTxt, R.drawable.disneyland, disneyLink));
 
         // we are initializing our adapter class and passing our arraylist to it.
         ActivityAdapter ActivityAdapter = new ActivityAdapter(this, activityArrayList);

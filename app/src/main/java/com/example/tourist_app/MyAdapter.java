@@ -106,26 +106,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //                        startActivity(intent);
 //                        break;
 //                }
-
-            Intent intent = new Intent(context.getContext(), GGDetails.class);
-            intent.putExtra("Title", model.getCard_title());
-            intent.putExtra("Desc", model.getCard_desc());
-            intent.putExtra("Image", model.getCard_image());
-            intent.putExtra("Link", model.getCard_link());
-            context.startActivity(intent);
+            itemClick(model);
         });
     }
 
     private void startActivity(Intent viewIntent) {
     }
 
-    public void itemClick(View view, Model model, int position) {
-        AppCompatActivity activity = (AppCompatActivity) view.getContext();
-        RefreshmentsFrag refreshmentsFrag = new RefreshmentsFrag();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, refreshmentsFrag).commit();
-
-        TextView titleTxt = (TextView) activity.findViewById(R.id.refreshmentTitleFrag);
-        titleTxt.setText(model.getCard_title());
+    public void itemClick(Model model) {
+        Intent intent = new Intent(context.getContext(), GGDetails.class);
+        intent.putExtra("Title", model.getCard_title());
+        intent.putExtra("Desc", model.getCard_desc());
+        intent.putExtra("Image", model.getCard_image());
+        intent.putExtra("Link", model.getCard_link());
+        context.startActivity(intent);
+//        AppCompatActivity activity = (AppCompatActivity) view.getContext();
+//        RefreshmentsFrag refreshmentsFrag = new RefreshmentsFrag();
+//        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, refreshmentsFrag).commit();
+//
+//        TextView titleTxt = (TextView) activity.findViewById(R.id.refreshmentTitleFrag);
+//        titleTxt.setText(model.getCard_title());
 
 //        Uri webpage = Uri.parse("https://www.android.com");
 //        Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);

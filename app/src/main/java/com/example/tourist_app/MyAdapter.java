@@ -1,25 +1,13 @@
 package com.example.tourist_app;
 
-import android.app.SearchManager;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -49,68 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.cardImage.setImageResource(model.getCard_image());
 
         /* TODO Fix the Intents to Re-Direct User to a Google Search of that Restaurant or Pub. Google Maps testing is for Fragment 2 of Landmarks */
-        holder.itemView.setOnClickListener(view -> {
-            //Should Re-Direct User to Website of Restaurant/Pub
-            //Toast.makeText(view.getContext(), ""+model.getCard_title() , Toast.LENGTH_SHORT).show();
-
-            //itemClick(view, model, position);
-//            Bundle bundle = new Bundle();
-//            bundle.putString("Title", model.getCard_title());
-//            bundle.putString("Description", model.getCard_desc());
-//            bundle.putInt("Image", model.getCard_image());
-
-//            AppCompatActivity activity = (AppCompatActivity) view.getContext();
-//            RefreshmentsFrag refreshmentsFrag = new RefreshmentsFrag();
-//            refreshmentsFrag.setArguments(bundle);
-//            activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, refreshmentsFrag).commit();
-
-            //Snackbar snackbar = Snackbar.make(view, ""+model.getCard_title(), 5000);
-//            snackbar.setAction("Search", view1 -> {
-//                Intent viewSearch = new Intent(Intent.ACTION_WEB_SEARCH);
-//                viewSearch.putExtra(SearchManager.QUERY, model.getCard_title());
-//                startActivity(viewSearch);
-//
-//                // Create a Uri from an intent string. Use the result to create an Intent.
-//                Uri gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988");
-//
-//                // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
-//                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-//                // Make the Intent explicit by setting the Google Maps package
-//                mapIntent.setPackage("com.google.android.apps.maps");
-//
-//                // Attempt to start an activity that can handle the Intent
-//                startActivity(mapIntent);
-//            });
-            //snackbar.setAction("Close", view1 -> {
-                //snackbar.dismiss();
-            //});
-            //snackbar.show();
-
-//            Intent intent;
-//                switch (holder.getAdapterPosition()) {
-//                    case 0:
-//                        intent = new Intent(Intent.ACTION_SEARCH, Uri.parse("https://www.google.ie"));
-//                        startActivity(intent);
-//                        break;
-//                    case 1:
-//                        Intent intent1 = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent1.putExtra(SearchManager.QUERY, "https://www.google.ie/1");
-//                        startActivity(intent1);
-//
-//                        intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.ie"));
-//                        startActivity(intent);
-//                        break;
-//                    case 2:
-//                        intent = new Intent(Intent.ACTION_WEB_SEARCH);
-//                        intent.putExtra(SearchManager.QUERY, "https://www.google.ie/2");
-//                        startActivity(intent);
-//                        break;
-//                }
-            itemClick(model);
-        });
-    }
-
-    private void startActivity(Intent viewIntent) {
+        holder.itemView.setOnClickListener(view -> itemClick(model));
     }
 
     public void itemClick(Model model) {
@@ -120,22 +47,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         intent.putExtra("Image", model.getCard_image());
         intent.putExtra("Link", model.getCard_link());
         context.startActivity(intent);
-//        AppCompatActivity activity = (AppCompatActivity) view.getContext();
-//        RefreshmentsFrag refreshmentsFrag = new RefreshmentsFrag();
-//        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, refreshmentsFrag).commit();
-//
-//        TextView titleTxt = (TextView) activity.findViewById(R.id.refreshmentTitleFrag);
-//        titleTxt.setText(model.getCard_title());
-
-//        Uri webpage = Uri.parse("https://www.android.com");
-//        Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-//        startActivity(webIntent);
-
-//        Snackbar snackbar = Snackbar.make(holder.itemView, ""+model.getCard_title(), 5000);
-//        snackbar.setAction("Close", view1 -> {
-//            snackbar.dismiss();
-//        });
-//        snackbar.show();
     }
 
     @Override

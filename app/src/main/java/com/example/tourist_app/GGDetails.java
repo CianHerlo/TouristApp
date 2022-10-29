@@ -1,15 +1,12 @@
 package com.example.tourist_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class GGDetails extends AppCompatActivity {
 
